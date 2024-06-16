@@ -24,8 +24,7 @@
       <template v-for="score in lightHouseSimulations">
         <div>
           <v-progress-circular
-              :model-value="100"
-              :rotate="360"
+              :model-value="score.value"
               :size="100"
               :width="5"
               color="#0c6"
@@ -42,6 +41,30 @@
 <script setup lang="ts">
 import FatArrow from "~/components/svg/FatArrow.vue";
 
+function observerCallback(entries: IntersectionObserverEntry[], observer: IntersectionObserver) {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      console.log('Intersection detected')
+      // Animate the lightHouseSimulations values
+      lightHouseSimulations.forEach((score, index) => {
+        setTimeout(() => {
+          // Use a while loop to set the value to 100 step by step
+          let interval = setInterval(() => {
+            score.value += 1
+            if (score.value >= 100) {
+              clearInterval(interval)
+            }
+          }, 10)
+        }, index * 300)
+      })
+    } else {
+      // reset the values
+      lightHouseSimulations.forEach(score => score.value = 0)
+    }
+  })
+}
+
+
 const degrees = [
   {label: 'Concurrency in GO', year: 2021, text: 'Coursera'},
   {label: 'Redislabs RU101 Certificate', year: 2021, text: 'Redis University'},
@@ -52,13 +75,20 @@ const degrees = [
   {label: 'BTS Audivisuel', year: 2001, text: `Lycée de l'image et du son d'Angoulême`},
 ]
 
-const lightHouseSimulations = [
-  {label: 'Performance', value: 100},
-  {label: 'Accessibility', value: 100},
-  {label: 'Best Practices', value: 100},
-  {label: 'SEO', value: 100},
-  {label: 'Beers 🍺', value: 100},
-]
+const lightHouseSimulations = reactive([
+  {label: 'Performance', value: 0},
+  {label: 'Accessibility', value: 0},
+  {label: 'Best Practices', value: 0},
+  {label: 'SEO', value: 0},
+  {label: 'Beers 🍺', value: 0},
+])
+
+onMounted(() => {
+  let observer = new IntersectionObserver(observerCallback, {rootMargin: "0px 0px 100px 0px"})
+  let target = document.querySelector('.code-like')
+  console.log(target)
+  observer.observe(target)
+})
 </script>
 
 <style scoped lang=scss>
