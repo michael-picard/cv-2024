@@ -18,7 +18,8 @@
     </v-timeline>
   </section>
   <section>
-    <h2>&lt;Let's do it together ! /&gt;</h2>
+    <FatArrow />
+    <h2 class="code-like">&lt;Let's do it together ! /&gt;</h2>
     <div class="gauge-grid">
       <template v-for="score in lightHouseSimulations">
         <div>
@@ -39,6 +40,8 @@
 </template>
 
 <script setup lang="ts">
+import FatArrow from "~/components/svg/FatArrow.vue";
+
 const degrees = [
   {label: 'Concurrency in GO', year: 2021, text: 'Coursera'},
   {label: 'Redislabs RU101 Certificate', year: 2021, text: 'Redis University'},
@@ -54,13 +57,25 @@ const lightHouseSimulations = [
   {label: 'Accessibility', value: 100},
   {label: 'Best Practices', value: 100},
   {label: 'SEO', value: 100},
-  {label: 'Beers 🍺 on fridays', value: 100},
+  {label: 'Beers 🍺', value: 100},
 ]
 </script>
 
 <style scoped lang=scss>
 :deep(.v-cart-title) {
   white-space: initial;
+}
+
+:deep(.fat-arrow) {
+  position: absolute;
+  margin-top: -20px;
+  margin-left: -2rem;
+}
+
+.code-like {
+  font-family: 'Fira Code', monospace;
+  font-size: 1.5rem;
+  text-align: center;
 }
 
 .gauge-grid {

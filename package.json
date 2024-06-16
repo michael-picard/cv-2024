@@ -12,6 +12,7 @@
     "@nuxt/devtools": "latest",
     "@types/node": "^18",
     "nuxt": "^3.6.1",
+    "nuxt-particles": "^0.3.0",
     "sass": "^1.77.5",
     "vite-plugin-vuetify": "^2.0.3",
     "vuetify": "^3.6.9"
