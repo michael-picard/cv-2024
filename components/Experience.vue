@@ -17,7 +17,10 @@
   </section>
 </template>
 
-<script setup lang="ts">
+<script
+    setup
+    lang="ts"
+>
 const experiences = [
   {
     title: 'Full-time lead dev & CTO at go2roues',
@@ -56,6 +59,9 @@ const experiences = [
 ]
 </script>
 
-<style scoped lang=scss>
+<style
+    scoped
+    lang=scss
+>
 
 </style>

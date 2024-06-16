@@ -1,71 +1,73 @@
 <template>
-  <section>
-    <h2>Skills</h2>
-    <div class="skills-grid">
-      <div>
-        <h3>
-          <WindowCodeIcon/>
-          Programming
-        </h3>
-        <ul>
-          <li
-              v-for="language in languages"
-              :key="language.name"
-          >
-            {{ language.name }}
-            <v-progress-linear
-                color="primary"
-                :model-value="language.level"
-            ></v-progress-linear>
-          </li>
-        </ul>
-      </div>
-      <div>
-        <h3>
-          <FrameworkIcon/>
-          Frameworks
-        </h3>
-        <ul>
-          <li
-              v-for="framework in frameworks"
-              :key="framework.name"
-          >
-            {{ framework.name }}
-            <v-progress-linear
-                color="primary"
-                :model-value="framework.level"
-            ></v-progress-linear>
-          </li>
-        </ul>
-      </div>
-      <div>
-        <h3>
-          <DatabaseIcon/>
-          Databases
-        </h3>
-        <ul>
-          <li
-              v-for="database in databases"
-              :key="database.name"
-          >
-            {{ database.name }}
-            <v-progress-linear
-                color="primary"
-                :model-value="database.level"
-            ></v-progress-linear>
-          </li>
-        </ul>
-      </div>
-      <div>
-        <h3>
-          <ToolsIcon/>
-          Other
-        </h3>
-        <ul>
-          <li>&check; Proficient in vector design using Figma</li>
-          <li>&check; Website crawling, analysis and optimisation</li>
-          <li>&check; Keyword Research, rank tracking</li>
-        </ul>
+  <section class="card">
+    <div class="card__content">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <div>
+          <h3>
+            <WindowCodeIcon/>
+            Programming
+          </h3>
+          <ul>
+            <li
+                v-for="language in languages"
+                :key="language.name"
+            >
+              {{ language.name }}
+              <v-progress-linear
+                  color="primary"
+                  :model-value="language.level"
+              ></v-progress-linear>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3>
+            <FrameworkIcon/>
+            Frameworks
+          </h3>
+          <ul>
+            <li
+                v-for="framework in frameworks"
+                :key="framework.name"
+            >
+              {{ framework.name }}
+              <v-progress-linear
+                  color="primary"
+                  :model-value="framework.level"
+              ></v-progress-linear>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3>
+            <DatabaseIcon/>
+            Databases
+          </h3>
+          <ul>
+            <li
+                v-for="database in databases"
+                :key="database.name"
+            >
+              {{ database.name }}
+              <v-progress-linear
+                  color="primary"
+                  :model-value="database.level"
+              ></v-progress-linear>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3>
+            <ToolsIcon/>
+            Other
+          </h3>
+          <ul>
+            <li>&check; Proficient in vector design using Figma</li>
+            <li>&check; Website crawling, analysis and optimisation</li>
+            <li>&check; Keyword Research, rank tracking</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>

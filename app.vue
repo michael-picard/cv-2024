@@ -1,20 +1,10 @@
 <template>
-<!--  <ul class="bg-bubbles">-->
-<!--    <li></li>-->
-<!--    <li></li>-->
-<!--    <li></li>-->
-<!--    <li></li>-->
-<!--    <li></li>-->
-<!--    <li></li>-->
-<!--    <li></li>-->
-<!--    <li></li>-->
-<!--    <li></li>-->
-<!--    <li></li>-->
-<!--  </ul>-->
   <NavHeaderBar/>
   <main>
-    <QuickPres/>
-    <Skills/>
+    <div class="cards">
+      <QuickPres/>
+      <Skills/>
+    </div>
     <Experience/>
     <Education/>
     <QuickBio/>
@@ -77,6 +67,13 @@ p, h1, h2, h3, h4, h5, h6 {
 body {
   background-color: #f5f5f5;
 }
+
+:root {
+  --card-top-offset: 1rem;
+  --card-margin: 2rem;
+}
+
+
 </style>
 
 <style
@@ -88,103 +85,77 @@ main {
   max-width: 1000px;
 
   :deep(section) {
-    padding: 2rem;
     margin: 2rem 0;
+
+    &:first-of-type {
+      --index: 1;
+    }
+
+    &:nth-child(2) {
+      --index: 2;
+    }
+
+    &:nth-child(3) {
+      --index: 3;
+    }
+
+    .card__content {
+      padding: 2rem;
+      background-color: white;
+      border-radius: 1rem;
+    }
+  }
+
+  :deep(section:not(.card)) {
+    padding: 2rem;
     background-color: white;
+    border-radius: 1rem;
   }
+
+  :deep(.card) {
+    position: sticky;
+    top: 1rem;
+    //padding-top: calc(var(--index)* var(--card-top-offset));
+  }
+
+  :deep(.card__content) {
+    transform-origin: 50% 0%;
+    will-change: transform;
+  }
+
+  @supports (animation-timeline: view()) {
+    :deep(.card) {
+      --index0: calc(var(--index) - 1); /* 0-based index */
+      --reverse-index: calc(var(--numcards) - var(--index0)); /* reverse index */
+      --reverse-index0: calc(var(--reverse-index) - 1); /* 0-based reverse index */
+    }
+
+    @keyframes scale {
+      to {
+        transform: scale(calc(1.1 - calc(0.1 * var(--reverse-index))));
+      }
+    }
+
+    .cards {
+      --numcards: 2;
+      view-timeline-name: --cards-element-scrolls-in-body;
+      ///* Make place at bottom, as items will slide to that position*/
+      //padding-bottom: calc(var(--numcards) * var(--card-top-offset));
+      ///* Don't include the --card-margin in padding, as that will affect the scroll-timeline*/
+      //margin-bottom: var(--card-margin);
+    }
+
+    :deep(.card__content) {
+      --start-range: calc(var(--index0) / var(--numcards) * 100%);
+      --end-range: calc((var(--index)) / var(--numcards) * 100%);
+
+      animation: linear scale forwards;
+      animation-timeline: --cards-element-scrolls-in-body;
+      animation-range: exit-crossing var(--start-range) exit-crossing var(--end-range);
+    }
+  }
+
 }
 
-.bg-bubbles {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  //z-index: 1;
 
-  li {
-    position: absolute;
-    display: block;
-    width: 40px;
-    height: 40px;
-    background-color: rgba(7, 189, 147, 0.72);
-    bottom: -160px;
-    animation: square 5s infinite;
-    transition-timing-function: linear;
-
-    &:nth-child(1) {
-      left: 10%;
-    }
-
-    :nth-child(2) {
-      left: 20%;
-      width: 80px;
-      height: 80px;
-      animation-duration: 8s;
-    }
-
-    :nth-child(3) {
-      left: 25%;
-      animation-delay: 4s;
-    }
-
-    :nth-child(4) {
-      left: 40%;
-      width: 60px;
-      height: 60px;
-      animation-duration: 6s;
-      background-color: rgba(255, 255, 255, 0.25);
-    }
-
-    :nth-child(5) {
-      left: 70%;
-    }
-
-    :nth-child(6) {
-      left: 80%;
-      width: 120px;
-      height: 120px;
-      animation-delay: 3s;
-      background-color: rgba(255, 255, 255, 0.2);
-    }
-
-    &:nth-child(7) {
-      left: 32%;
-      width: 160px;
-      height: 160px;
-      animation-delay: 7s;
-    }
-
-    &:nth-child(8) {
-      left: 55%;
-      width: 20px;
-      height: 20px;
-      animation-duration: 4s;
-    }
-
-    &:nth-child(9) {
-      left: 25%;
-      width: 10px;
-      height: 10px;
-      animation-delay: 2s;
-    }
-
-    &:nth-child(10) {
-      left: 90%;
-      width: 160px;
-      height: 160px;
-      animation-delay: 11s;
-    }
-  }
-}
-
-@keyframes square {
-  0% {
-    transform: translateY(0);
-  }
-
-  100% {
-    transform: translateY(-1500px) rotate(600deg);
-  }
-}
 </style>
