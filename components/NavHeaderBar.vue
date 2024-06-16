@@ -48,7 +48,7 @@ const options: ISourceOptions = {
       type: "circle",
     },
   },
-};
+}
 
 const onLoad = (container: Container) => {
   // Do something with the container
