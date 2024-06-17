@@ -8,7 +8,7 @@
             <div class="text-h6">{{ experience.date }}</div>
           </template>
           <div>
-            <div class="text-h6">{{ experience.title }}</div>
+            <div class="text-h6"><strong>{{ experience.title }}</strong></div>
             <p v-html="experience.description"></p>
           </div>
         </v-timeline-item>
@@ -23,7 +23,7 @@
 >
 const experiences = [
   {
-    title: 'Full-time lead dev & CTO at go2roues',
+    title: 'Lead dev & CTO at GO2ROUES',
     date: 'Since 2019',
     description: `Besides my work for Qualifirst I co-founded GO2ROUES in 2017 and switched to full time in 2019.`
   },
@@ -38,7 +38,7 @@ const experiences = [
   {
     title: 'Bachelor Degree in business management',
     date: '2011 - 2012',
-    description: `Sound designer activity: Creation of Samples &amp; Presets EDM packs available for purchase.`
+    description: `While preparing this degree I started making money online through my sound designer skills.`
   },
   {
     title: 'Some miscellaneous jobs',
@@ -46,15 +46,14 @@ const experiences = [
     description: `Some miscellaneous interim jobs to pay the bills, mostly carpentry. Meanwhile, I taught myself blogging, seo and coding.`
   },
   {
-    title: '1 year Working visa in Canada',
+    title: 'Working visa in Canada',
     date: '2007 - 2008',
-    description: `1 year Working visa in Canada, where I
-    learnt English and worked among other things as dog handler for a professional dog musher, a childhood dream accomplishment which I'm very proud of.`
+    description: `1 year in British Columbia and Yukon territory, where I learnt English and worked among other things as dog handler for a professional dog musher, a childhood dream accomplishment which I'm proud of.`
   },
   {
     title: 'Sound engineering',
     date: '2001 - 2007',
-    description: `Sound engineering in tv and movie dubbing industry in Paris for various companies as a free lance or an employee. A pathetic job in a pathetic city.`
+    description: `Worked as a sound engineer in tv and movie dubbing industry in Paris, for various companies as a free lance or an employee. A pathetic job in a pathetic city.`
   }
 ]
 </script>

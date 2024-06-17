@@ -44,8 +44,7 @@ import FatArrow from "~/components/svg/FatArrow.vue";
 function observerCallback(entries: IntersectionObserverEntry[], observer: IntersectionObserver) {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      console.log('Intersection detected')
-      // Animate the lightHouseSimulations values
+      // Animate the lightHouseSimulationsonMounted values
       lightHouseSimulations.forEach((score, index) => {
         setTimeout(() => {
           // Use a while loop to set the value to 100 step by step
@@ -86,13 +85,12 @@ const lightHouseSimulations = reactive([
 onMounted(() => {
   let observer = new IntersectionObserver(observerCallback, {rootMargin: "0px 0px 100px 0px"})
   let target = document.querySelector('.code-like')
-  console.log(target)
   observer.observe(target)
 })
 </script>
 
 <style scoped lang=scss>
-:deep(.v-cart-title) {
+.v-card-title {
   white-space: initial;
 }
 
@@ -100,6 +98,10 @@ onMounted(() => {
   position: absolute;
   margin-top: -20px;
   margin-left: -2rem;
+  display: none;
+  @media screen and (min-width: 947px) {
+    display: block;
+  }
 }
 
 .code-like {
