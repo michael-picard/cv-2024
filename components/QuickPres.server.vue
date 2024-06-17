@@ -13,11 +13,22 @@
           Full stack web developer
         </div>
       </div>
-      <div >
+      <div>
         <p>Hello, my friends and colleagues call me Mike. I am a French senior full stack developer with over 10 years of experience in the e-commerce industry. I obsess over web perfomance and thrive on constant learning. My skills and experience will help you solve problems and make more money.</p>
         <div class="quick-pres__actions">
-          <a href="https://www.linkedin.com/in/michael-picard-a7607540/" target="_blank" aria-label="Mon profil Linkedin"><LinkedinIcon :size="30"/></a>
-          <a href="tel:+33658340416" aria-label="Me contacter par téléphone"><PhoneIcon :size="30" /></a>
+          <a
+              href="https://www.linkedin.com/in/michael-picard-a7607540/"
+              target="_blank"
+              aria-label="Mon profil Linkedin"
+          >
+            <LinkedinIcon :size="30"/>
+          </a>
+          <a
+              href="tel:+33658340416"
+              aria-label="Me contacter par téléphone"
+          >
+            <PhoneIcon :size="30"/>
+          </a>
         </div>
       </div>
     </div>

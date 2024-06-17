@@ -115,46 +115,44 @@ main {
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
   }
 
-  :deep(.card) {
-    position: sticky;
-    top: 1rem;
-    //padding-top: calc(var(--index)* var(--card-top-offset));
-  }
 
-  :deep(.card__content) {
-    transform-origin: 50% 0%;
-    will-change: transform;
-  }
-
-  @supports (animation-timeline: view()) {
+  @media screen and (min-height: 700px) { // The card scroll animation is only visible on screens with a height of at least 676px
     :deep(.card) {
-      --index0: calc(var(--index) - 1); /* 0-based index */
-      --reverse-index: calc(var(--numcards) - var(--index0)); /* reverse index */
-      --reverse-index0: calc(var(--reverse-index) - 1); /* 0-based reverse index */
-    }
-
-    @keyframes scale {
-      to {
-        transform: scale(calc(1.1 - calc(0.1 * var(--reverse-index))));
-      }
-    }
-
-    .cards {
-      --numcards: 2;
-      view-timeline-name: --cards-element-scrolls-in-body;
-      ///* Make place at bottom, as items will slide to that position*/
-      //padding-bottom: calc(var(--numcards) * var(--card-top-offset));
-      ///* Don't include the --card-margin in padding, as that will affect the scroll-timeline*/
-      //margin-bottom: var(--card-margin);
+      position: sticky;
+      top: 1rem;
     }
 
     :deep(.card__content) {
-      --start-range: calc(var(--index0) / var(--numcards) * 100%);
-      --end-range: calc((var(--index)) / var(--numcards) * 100%);
+      transform-origin: 50% 0%;
+      will-change: transform;
+    }
 
-      animation: linear scale forwards;
-      animation-timeline: --cards-element-scrolls-in-body;
-      animation-range: exit-crossing var(--start-range) exit-crossing var(--end-range);
+    @supports (animation-timeline: view()) {
+      :deep(.card) {
+        --index0: calc(var(--index) - 1); /* 0-based index */
+        --reverse-index: calc(var(--numcards) - var(--index0)); /* reverse index */
+        --reverse-index0: calc(var(--reverse-index) - 1); /* 0-based reverse index */
+      }
+
+      @keyframes scale {
+        to {
+          transform: scale(calc(1.1 - calc(0.1 * var(--reverse-index))));
+        }
+      }
+
+      .cards {
+        --numcards: 2;
+        view-timeline-name: --cards-element-scrolls-in-body;
+      }
+
+      :deep(.card__content) {
+        --start-range: calc(var(--index0) / var(--numcards) * 100%);
+        --end-range: calc((var(--index)) / var(--numcards) * 100%);
+
+        animation: linear scale forwards;
+        animation-timeline: --cards-element-scrolls-in-body;
+        animation-range: exit-crossing var(--start-range) exit-crossing var(--end-range);
+      }
     }
   }
 
