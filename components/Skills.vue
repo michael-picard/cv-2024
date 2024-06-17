@@ -15,7 +15,7 @@
             >
               {{ language.name }}
               <v-progress-linear
-                  color="primary"
+                  color="success"
                   :model-value="language.level"
                   :buffer-value="language.buffer"
               ></v-progress-linear>
@@ -34,7 +34,7 @@
             >
               {{ framework.name }}
               <v-progress-linear
-                  color="primary"
+                  color="warning"
                   :model-value="framework.level"
                   :buffer-value="framework.buffer"
               ></v-progress-linear>
@@ -53,7 +53,7 @@
             >
               {{ database.name }}
               <v-progress-linear
-                  color="primary"
+                  color="info"
                   :model-value="database.level"
                   :buffer-value="database.buffer"
               ></v-progress-linear>
