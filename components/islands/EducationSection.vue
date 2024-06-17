@@ -17,53 +17,9 @@
       </template>
     </v-timeline>
   </section>
-  <section>
-    <FatArrow />
-    <h2 class="code-like">&lt;Let's do it together ! /&gt;</h2>
-    <div class="gauge-grid">
-      <template v-for="score in lightHouseSimulations">
-        <div>
-          <v-progress-circular
-              :model-value="score.value"
-              :size="100"
-              :width="5"
-              color="#0c6"
-          >
-            {{ score.value }}
-          </v-progress-circular>
-          <div class="gauge-label">{{ score.label }}</div>
-        </div>
-      </template>
-    </div>
-  </section>
 </template>
 
 <script setup lang="ts">
-import FatArrow from "~/components/svg/FatArrow.vue";
-
-function observerCallback(entries: IntersectionObserverEntry[], observer: IntersectionObserver) {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      // Animate the lightHouseSimulationsonMounted values
-      lightHouseSimulations.forEach((score, index) => {
-        setTimeout(() => {
-          // Use a while loop to set the value to 100 step by step
-          let interval = setInterval(() => {
-            score.value += 1
-            if (score.value >= 100) {
-              clearInterval(interval)
-            }
-          }, 10)
-        }, index * 300)
-      })
-    } else {
-      // reset the values
-      lightHouseSimulations.forEach(score => score.value = 0)
-    }
-  })
-}
-
-
 const degrees = [
   {label: 'Concurrency in GO', year: 2021, text: 'Coursera'},
   {label: 'Redislabs RU101 Certificate', year: 2021, text: 'Redis University'},
@@ -73,20 +29,6 @@ const degrees = [
   {label: 'Vocational Bachelor Degree in Business Management', year: 2011, text: 'Unniversité Bordeaux IV'},
   {label: 'BTS Audivisuel', year: 2001, text: `Lycée de l'image et du son d'Angoulême`},
 ]
-
-const lightHouseSimulations = reactive([
-  {label: 'Performance', value: 0},
-  {label: 'Accessibility', value: 0},
-  {label: 'Best Practices', value: 0},
-  {label: 'SEO', value: 0},
-  {label: 'Beers 🍺', value: 0},
-])
-
-onMounted(() => {
-  let observer = new IntersectionObserver(observerCallback, {rootMargin: "0px 0px 100px 0px"})
-  let target = document.querySelector('.code-like')
-  observer.observe(target)
-})
 </script>
 
 <style scoped lang=scss>
@@ -126,5 +68,23 @@ onMounted(() => {
   .gauge-label {
     text-align: center;
   }
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+:deep(.v-timeline-item__body) {
+  animation: reveal linear both;
+  animation-timeline: view();
+  animation-range: entry 10% cover 20%;
 }
 </style>

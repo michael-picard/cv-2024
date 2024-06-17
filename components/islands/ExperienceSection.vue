@@ -62,5 +62,55 @@ const experiences = [
     scoped
     lang=scss
 >
+@keyframes reveal-right {
+  from {
+    opacity: .8;
+    transform: translateX(-.5rem);
+  }
 
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes reveal-left {
+  from {
+    opacity: 0;
+    transform: translateX(.5rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+:deep(.v-timeline-item) {
+  .v-timeline-item__body, .v-timeline-item__opposite {
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+    animation-timeline: view();
+    animation-range: entry 5% cover 10%;
+  }
+
+
+  &:nth-child(odd) {
+    .v-timeline-item__body {
+      animation-name: reveal-left;
+    }
+    .v-timeline-item__opposite {
+      animation-name: reveal-right;
+    }
+  }
+
+  &:nth-child(even) {
+    .v-timeline-item__body {
+      animation-name: reveal-right;
+    }
+    .v-timeline-item__opposite {
+      animation-name: reveal-left;
+    }
+  }
+}
 </style>

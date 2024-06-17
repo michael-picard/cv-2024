@@ -5,9 +5,10 @@
       <QuickPres/>
       <Skills/>
     </div>
-    <Experience/>
-    <Education/>
-    <QuickBio/>
+    <NuxtIsland name="ExperienceSection" />
+    <NuxtIsland name="EducationSection" />
+    <LighthouseSection/>
+    <QuickBioSection/>
   </main>
   <FooterBar/>
 </template>
@@ -16,6 +17,7 @@
     setup
     lang="ts"
 >
+
 useHead({
   title: 'Michael Picard - Full Stack Developer',
   meta: [
@@ -103,6 +105,7 @@ main {
       padding: 2rem;
       background-color: white;
       border-radius: 1rem;
+      box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
     }
   }
 
@@ -110,6 +113,7 @@ main {
     padding: 2rem;
     background-color: white;
     border-radius: 1rem;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
   }
 
   :deep(.card) {
