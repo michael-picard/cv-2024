@@ -5,8 +5,8 @@
       <QuickPres/>
       <Skills/>
     </div>
-    <NuxtIsland name="ExperienceSection" />
-    <NuxtIsland name="EducationSection" />
+    <ExperienceSection/>
+    <EducationSection/>
     <LighthouseSection/>
     <QuickBioSection/>
   </main>
@@ -17,6 +17,8 @@
     setup
     lang="ts"
 >
+
+import ExperienceSection from "~/components/ExperienceSection.vue";
 
 useHead({
   title: 'Michael Picard - Full Stack Developer',
