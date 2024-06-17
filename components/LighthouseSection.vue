@@ -9,7 +9,7 @@
               :model-value="score.value"
               :size="100"
               :width="5"
-              color="#0c6"
+              color="success"
           >
             {{ score.value }}
           </v-progress-circular>

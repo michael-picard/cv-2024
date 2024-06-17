@@ -46,6 +46,7 @@ body {
   -webkit-font-smoothing: antialiased;
   //font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
   font-family: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  background-color: #f5f5f5;
 }
 
 img, picture, video, canvas {
@@ -65,15 +66,14 @@ p, h1, h2, h3, h4, h5, h6 {
   isolation: isolate;
 }
 
-body {
-  background-color: #f5f5f5;
-}
-
 :root {
   --card-top-offset: 1rem;
   --card-margin: 2rem;
 }
 
+a {
+  color: rgb(var(--v-theme-success))
+}
 
 </style>
 
