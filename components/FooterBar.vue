@@ -3,7 +3,7 @@
     <div class="footer__text">©{{ new Date().getFullYear() }} MP</div>
     <NuxtParticles
         id="particles-footer"
-        :options="options"
+        :options="particleOptions"
     />
   </footer>
 </template>
@@ -12,53 +12,8 @@
     setup
     lang="ts"
 >
-import type {Container, ISourceOptions} from '@tsparticles/engine'
+import particleOptions from "~/utils/particles-options";
 
-// See https://particles.js.org/docs/interfaces/tsParticles_Engine.Options_Interfaces_IOptions.IOptions.html
-const options: ISourceOptions = {
-  // background: {
-  //   color: "#000000",
-  // },
-
-  detectRetina: true,
-  // backgroundMask: {
-  //   enable: true,
-  // },
-  fullScreen: {
-    enable: false,
-    zIndex: -1,
-  },
-  particles: {
-    number: {
-      value: 60,
-    },
-    links: {
-      distance: 40,
-      enable: true,
-      triangles: {
-        enable: true,
-        opacity: 0.1,
-      },
-    },
-    move: {
-      enable: true,
-      speed: .1,
-    },
-    size: {
-      value: 1,
-    },
-    shape: {
-      type: "circle",
-      // close: false,
-      // fill: true,
-      // options: {
-      //   polygon: {
-      //     sides: 15,
-      //   },
-      // },
-    },
-  }
-}
 </script>
 
 <style
