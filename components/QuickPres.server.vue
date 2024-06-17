@@ -39,7 +39,12 @@ import PhoneIcon from "~/components/icons/PhoneIcon.vue";
 >
 .quick-pres__grid {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  @media screen and (min-width: 400px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media screen and (min-width: 600px) {
+    grid-template-columns: 1fr 2fr;
+  }
   place-items: center;
   grid-gap: 2rem;
 
