@@ -17,9 +17,6 @@
     setup
     lang="ts"
 >
-
-import ExperienceSection from "~/components/ExperienceSection.vue";
-
 useHead({
   title: 'Michael Picard - Full Stack Developer',
   meta: [
