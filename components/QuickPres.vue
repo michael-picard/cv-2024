@@ -2,12 +2,27 @@
   <section class="card">
     <div class="quick-pres__grid card__content">
       <div>
-        <img
-            src="https://placehold.co/250x300"
-            alt=""
+        <!--        <img-->
+        <!--            src="https://placehold.co/250x300"-->
+        <!--            alt=""-->
+        <!--            width="250"-->
+        <!--            height="300"-->
+        <!--        >-->
+<!--        <img-->
+<!--            src="/media/images/mp-portrait-cropped.jpg"-->
+<!--            alt="Michael Picard portrait"-->
+<!--            width="250"-->
+<!--            height="300"-->
+<!--        >-->
+        <NuxtPicture
+            src="/media/images/mp-portrait-cropped.jpg"
+            format="webp,avif"
+            quality="30"
+            alt="Michael Picard portrait"
+            :placeholder="[25,30,75,5]"
+            densities="x1 x2"
             width="250"
-            height="300"
-        >
+            height="300"/>
         <div>
           <h1>Michael Picard</h1>
           Full stack web developer
