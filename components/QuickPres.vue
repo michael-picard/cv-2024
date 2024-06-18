@@ -2,49 +2,49 @@
   <section class="card">
     <div class="quick-pres__grid card__content">
       <div>
-        <!--        <img-->
-        <!--            src="https://placehold.co/250x300"-->
-        <!--            alt=""-->
-        <!--            width="250"-->
-        <!--            height="300"-->
-        <!--        >-->
-<!--        <img-->
-<!--            src="/media/images/mp-portrait-cropped.jpg"-->
-<!--            alt="Michael Picard portrait"-->
-<!--            width="250"-->
-<!--            height="300"-->
-<!--        >-->
-        <NuxtPicture
-            src="/media/images/mp-portrait-cropped.jpg"
-            format="webp,avif"
-            quality="30"
-            alt="Michael Picard portrait"
-            :placeholder="[25,30,75,5]"
-            densities="x1 x2"
-            width="250"
-            height="300"/>
+        <img
+            src="https://placehold.co/200x240"
+            alt=""
+            width="200"
+            height="240"
+        >
+        <!--        <NuxtPicture-->
+        <!--            src="/media/images/mp-portrait-cropped.jpg"-->
+        <!--            format="webp"-->
+        <!--            quality="30"-->
+        <!--            alt="Michael Picard portrait"-->
+        <!--            :placeholder="[20,24,75,5]"-->
+        <!--            densities="x1 x2"-->
+        <!--            sizes="400px, sm:200px"-->
+        <!--            width="200"-->
+        <!--            height="240"-->
+        <!--           />-->
         <div>
           <h1>Michael Picard</h1>
           Full stack web developer
         </div>
       </div>
       <div>
-        <p>Hello, my friends and colleagues call me Mike. I am a French senior full stack developer with over 10 years of experience in the e-commerce industry. I obsess over web perfomance and thrive on constant learning. My skills and experience will help you solve problems and make more money.</p>
-        <div class="quick-pres__actions">
-          <a
-              href="https://www.linkedin.com/in/michael-picard-a7607540/"
-              target="_blank"
-              aria-label="Mon profil Linkedin"
-          >
-            <LinkedinIcon :size="30"/>
-          </a>
-          <a
-              href="tel:+33658340416"
-              aria-label="Me contacter par téléphone"
-          >
-            <PhoneIcon :size="30"/>
-          </a>
+        <div class="quick-pres__title">
+          <h2>About me</h2>
+          <div class="quick-pres__actions">
+            <a
+                href="https://www.linkedin.com/in/michael-picard-a7607540/"
+                target="_blank"
+                aria-label="Mon profil Linkedin"
+            >
+              <LinkedinIcon :size="24"/>
+            </a>
+            <a
+                href="tel:+33658340416"
+                aria-label="Me contacter par téléphone"
+            >
+              <PhoneIcon :size="24"/>
+            </a>
+          </div>
         </div>
+        <p>Hello, my friends and colleagues call me Mike. I am a French senior full stack developer with over 10 years of experience in the e-commerce industry. I obsess over web perfomance and thrive on constant learning. My skills and experience will help you solve problems and make more money.</p>
+
       </div>
     </div>
   </section>
@@ -76,6 +76,13 @@ import PhoneIcon from "~/components/icons/PhoneIcon.vue";
 
   > div:first-child {
     text-align: center;
+  }
+
+  .quick-pres__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: .5rem;
   }
 
   .quick-pres__actions {

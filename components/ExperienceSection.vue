@@ -91,7 +91,7 @@ const experiences = [
     animation-fill-mode: both;
     animation-timing-function: linear;
     animation-timeline: view();
-    animation-range: entry 5% cover 10%;
+    animation-range: entry 10% cover 20%;
   }
 
 

@@ -75,6 +75,12 @@ a {
   color: rgb(var(--v-theme-success))
 }
 
+h2 {
+  color: rgb(var(--v-theme-success));
+  font-variant-caps: small-caps;
+  font-weight: 800;
+}
+
 </style>
 
 <style
