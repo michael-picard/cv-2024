@@ -8,9 +8,9 @@
         <!--                    width="200"-->
         <!--                />-->
         <NuxtPicture
-            src="/media/images/cropped/mp-portait-grayscale-but-green.jpg"
+            src="/media/images/cropped/mp-portait-grayscale-but-green-400-516.jpg"
             format="webp"
-            quality="30"
+            quality="50"
             alt="Michael Picard portrait"
             :placeholder="[20,24,75,5]"
             densities="x1 x2"
