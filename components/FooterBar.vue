@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <div class="footer__text">©{{ new Date().getFullYear() }} MP</div>
+    <div class="footer__text">©{{ new Date().getFullYear() }} &bullet; <a href="https://github.com/michael-picard/cv-2024" rel="nofollow">source code</a></div>
     <NuxtParticles
         id="particles-footer"
         :options="particleOptions"

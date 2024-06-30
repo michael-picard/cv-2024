@@ -2,23 +2,22 @@
   <section class="card">
     <div class="quick-pres__grid card__content">
       <div>
-        <img
-            src="https://placehold.co/200x240"
-            alt=""
+        <!--                <img-->
+        <!--                    src="/media/images/cropped/mp-portait-grayscale-but-green.jpg"-->
+        <!--                    alt="mp"-->
+        <!--                    width="200"-->
+        <!--                />-->
+        <NuxtPicture
+            src="/media/images/cropped/mp-portait-grayscale-but-green.jpg"
+            format="webp"
+            quality="30"
+            alt="Michael Picard portrait"
+            :placeholder="[20,24,75,5]"
+            densities="x1 x2"
+            sizes="400px, sm:200px"
             width="200"
-            height="240"
-        >
-        <!--        <NuxtPicture-->
-        <!--            src="/media/images/mp-portrait-cropped.jpg"-->
-        <!--            format="webp"-->
-        <!--            quality="30"-->
-        <!--            alt="Michael Picard portrait"-->
-        <!--            :placeholder="[20,24,75,5]"-->
-        <!--            densities="x1 x2"-->
-        <!--            sizes="400px, sm:200px"-->
-        <!--            width="200"-->
-        <!--            height="240"-->
-        <!--           />-->
+            height="259"
+        />
         <div>
           <h1>Michael Picard</h1>
           Full stack web developer
@@ -44,7 +43,6 @@
           </div>
         </div>
         <p>Hello, my friends and colleagues call me Mike. I am a French senior full stack developer with over 10 years of experience in the e-commerce industry. I obsess over web perfomance and thrive on constant learning. My skills and experience will help you solve problems and make more money.</p>
-
       </div>
     </div>
   </section>
@@ -65,7 +63,7 @@ import PhoneIcon from "~/components/icons/PhoneIcon.vue";
 >
 .quick-pres__grid {
   display: grid;
-  @media screen and (min-width: 400px) {
+  @media screen and (min-width: 500px) {
     grid-template-columns: 1fr 1fr;
   }
   @media screen and (min-width: 600px) {

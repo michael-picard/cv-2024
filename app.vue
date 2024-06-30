@@ -72,11 +72,11 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-  color: rgb(var(--v-theme-success))
+  color: rgb(var(--v-theme-info))
 }
 
 h2 {
-  color: rgb(var(--v-theme-success));
+  color: rgb(var(--v-theme-info));
   font-variant-caps: small-caps;
   font-weight: 800;
 }

@@ -1,9 +1,20 @@
 // import 'vuetify/styles'
-import { createVuetify } from 'vuetify'
+import {createVuetify, type ThemeDefinition} from 'vuetify'
+
+const myCustomTheme: ThemeDefinition = {
+  colors: {
+    info: '0087A9',
+  },
+}
 
 export default defineNuxtPlugin((app) => {
   const vuetify = createVuetify({
-    // ... your configuration
+    theme: {
+      defaultTheme: 'myCustomTheme',
+      themes: {
+        myCustomTheme,
+      },
+    },
   })
   app.vueApp.use(vuetify)
 })
