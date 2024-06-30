@@ -12,7 +12,7 @@
             format="webp"
             quality="50"
             alt="Michael Picard portrait"
-            :placeholder="[20,24,75,5]"
+            :placeholder="[20,26,75,5]"
             densities="x1 x2"
             sizes="400px, sm:200px"
             width="200"
