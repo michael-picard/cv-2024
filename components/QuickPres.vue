@@ -7,9 +7,8 @@
         <!--                    alt="mp"-->
         <!--                    width="200"-->
         <!--                />-->
-        <NuxtPicture
+        <NuxtImg
             src="/media/images/cropped/mp-portait-grayscale-but-green-400-516.jpg"
-            format="webp"
             quality="50"
             alt="Michael Picard portrait"
             :placeholder="[20,26,75,5]"
