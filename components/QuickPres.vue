@@ -14,9 +14,9 @@
             alt="Michael Picard portrait"
             :placeholder="[20,26,75,5]"
             densities="x1 x2"
-            sizes="400px, sm:200px"
+            sizes="200px"
             width="200"
-            height="259"
+            height="258"
         />
         <div>
           <h1>Michael Picard</h1>
