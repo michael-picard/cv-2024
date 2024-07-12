@@ -44,7 +44,7 @@ const experiences = [
         "Writing API integration with tier services",
         "Coordination of company departments in regards to IT",
     ],
-    techStack:  "Woocommerce, Vuejs, Laravel, Nuxt, Deno, Redis, MariaDB, MongoDB, WebSockets, Nginx"
+    techStack:  "Woocommerce, Vue, Vite, Laravel, Nuxt, Deno, Redis, MariaDB, MongoDB, WebSockets, Nginx, ESLint, GraphQL, Gitlab CI"
   },
   {
     title: 'QUALIFIRST FOODS',
@@ -59,7 +59,7 @@ const experiences = [
         "Automating marketing, tasks, and reports en SQL server since the ERP wasn't open source",
         "English to French translations",
     ],
-    techStack: "Magento, Shopify, Wordpress, Odoo, SQL Server"
+    techStack: "Magento, Shopify, Wordpress, Odoo, SQL Server, Vue, jQuery"
   },
   {
     title: 'Bachelor Degree in business management',
