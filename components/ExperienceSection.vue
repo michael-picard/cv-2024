@@ -8,8 +8,15 @@
             <div class="text-h6">{{ experience.date }}</div>
           </template>
           <div>
-            <div class="text-h6"><strong>{{ experience.title }}</strong></div>
+            <div class="text-h6 experience__title"><strong>{{ experience.title }}</strong><span>{{experience.position}}</span></div>
+            <p class="experience__whois"><em v-html="experience.whois"></em></p>
             <p v-html="experience.description"></p>
+            <ul>
+              <li v-for="task in experience.tasks">{{ task }}</li>
+            </ul>
+            <p v-if="experience.techStack"
+            class="experience__stack"
+            >Stack : {{ experience.techStack }}</p>
           </div>
         </v-timeline-item>
       </template>
@@ -21,19 +28,38 @@
     setup
     lang="ts"
 >
+
 const experiences = [
   {
-    title: 'Lead dev & CTO at GO2ROUES',
+    title: 'GO2ROUES',
+    position: 'Lead dev & CTO',
     date: 'Since 2019',
-    description: `Besides my work for Qualifirst I co-founded GO2ROUES in 2017 and switched to full time in 2019.`
+    whois: "GO2ROUES sells electric motorcycles online and in stores and repair shops.",
+    tasks: [
+        "Building the ecommerce website and all its custom functionnalities",
+        "Building our custom ERP internal tooling : CRM, warehouse management system, delivery management system, customer service ticket support system, accounting exports, etc..",
+        "Writing a browser extension",
+        "Writing custom CLI tools",
+        "Recruiting & managing developers",
+        "Writing API integration with tier services",
+        "Coordination of company departments in regards to IT",
+    ],
+    techStack:  "Woocommerce, Vuejs, Laravel, Nuxt, Deno, Redis, MariaDB, MongoDB, WebSockets, Nginx"
   },
   {
-    title: 'Full stack developer at Qualifirst Foods',
+    title: 'QUALIFIRST FOODS',
+    position: 'Full stack developer',
     date: '2012 - 2019',
-    description: `Tasks include: IT project management, implementing sales
-    strategy, database programming and integration, Magento development, Wordpress development, Shopify development, SEO, ecommerce
-    marketing management, email marketing, English to French translations. Also Started on my spare time what became a serious stream of income : <a
-        href="https://mac-quest.com">https://mac-quest.com</a>, and which allows me to connect with the best macOS software editors.`
+    whois: "Qualifirst is a B2B food distributor in Canada, with a focus on high end products.",
+    tasks: [
+        "Building and maintaining a network of websites",
+        "Building custom ecommerce features",
+        "Building custom tooling : warehouse order processing display, expiration date alerts, time to re-order customer alerts, etc..",
+        "Improving and monitoring search engine rankings",
+        "Automating marketing, tasks, and reports en SQL server since the ERP wasn't open source",
+        "English to French translations",
+    ],
+    techStack: "Magento, Shopify, Wordpress, Odoo, SQL Server"
   },
   {
     title: 'Bachelor Degree in business management',
@@ -62,6 +88,30 @@ const experiences = [
     scoped
     lang=scss
 >
+.experience__title {
+  display: flex;
+  justify-content: space-between;
+  span {
+    color: rgb(var(--v-theme-info));
+    font-weight: bold;
+  }
+}
+
+.experience__whois {
+  color: slategrey;
+}
+
+ul {
+  li {
+    list-style: circle;
+  }
+}
+
+.experience__stack {
+  color: oklch(0.49 0.28 293.89);
+  font-family: monospace;
+}
+
 @keyframes reveal-right {
   from {
     opacity: .8;
