@@ -42,6 +42,7 @@
           </div>
         </div>
         <p>Hello, my friends and colleagues call me Mike. I am a French senior full stack developer with over 10 years of experience in the e-commerce industry. I obsess over web perfomance and thrive on constant learning. My skills and experience will help you solve problems and make more money.</p>
+        <p><router-link to="/blog">Read the blog</router-link></p>
       </div>
     </div>
   </section>
@@ -62,14 +63,17 @@ import PhoneIcon from "~/components/icons/PhoneIcon.vue";
 >
 .quick-pres__grid {
   display: grid;
-  @media screen and (min-width: 500px) {
-    grid-template-columns: 1fr 1fr;
-  }
-  @media screen and (min-width: 600px) {
-    grid-template-columns: 1fr 2fr;
-  }
   place-items: center;
   grid-gap: 2rem;
+
+  & {
+    @media screen and (min-width: 500px) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @media screen and (min-width: 600px) {
+      grid-template-columns: 1fr 2fr;
+    }
+  }
 
   > div:first-child {
     text-align: center;

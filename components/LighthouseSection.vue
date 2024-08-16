@@ -78,8 +78,11 @@ onMounted(() => {
   margin-top: -20px;
   margin-left: -2rem;
   display: none;
-  @media screen and (min-width: 947px) {
-    display: block;
+
+  & {
+    @media screen and (min-width: 947px) {
+      display: block;
+    }
   }
 }
 

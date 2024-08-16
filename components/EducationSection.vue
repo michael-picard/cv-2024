@@ -19,7 +19,10 @@
   </section>
 </template>
 
-<script setup lang="ts">
+<script
+    setup
+    lang="ts"
+>
 const degrees = [
   {label: 'Concurrency in GO', year: 2021, text: 'Coursera'},
   {label: 'Redislabs RU101 Certificate', year: 2021, text: 'Redis University'},
@@ -31,7 +34,10 @@ const degrees = [
 ]
 </script>
 
-<style scoped lang=scss>
+<style
+    scoped
+    lang=scss
+>
 .v-card-title {
   white-space: initial;
 }
@@ -41,8 +47,11 @@ const degrees = [
   margin-top: -20px;
   margin-left: -2rem;
   display: none;
-  @media screen and (min-width: 947px) {
-    display: block;
+
+  & {
+    @media screen and (min-width: 947px) {
+      display: block;
+    }
   }
 }
 
