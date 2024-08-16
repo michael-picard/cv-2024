@@ -1,14 +1,7 @@
 <template>
   <NavHeaderBar/>
   <main>
-    <div class="cards">
-      <QuickPres/>
-      <Skills/>
-    </div>
-    <ExperienceSection/>
-    <EducationSection/>
-    <LighthouseSection/>
-    <QuickBioSection/>
+    <NuxtPage/>
   </main>
   <FooterBar/>
 </template>
@@ -17,15 +10,7 @@
     setup
     lang="ts"
 >
-useHead({
-  title: 'Michael Picard - Full Stack Developer',
-  meta: [
-    {
-      name: 'description',
-      content: 'Hello there ! I am a French senior full stack developer with over 10 years of experience in the e-commerce industry.'
-    }
-  ],
-})
+
 </script>
 
 <style lang="scss">
@@ -81,6 +66,27 @@ h2 {
   font-weight: 800;
 }
 
+// Shiki
+pre.shiki {
+  background-color: #2f312f; // rgb(15, 17, 26);
+  margin: 1rem 0;
+  padding: 1rem 0;
+
+  code {
+    counter-reset: step;
+    counter-increment: step 0;
+
+    .line::before {
+      content: counter(step);
+      counter-increment: step;
+      width: 1rem;
+      margin-right: 1.5rem;
+      display: inline-block;
+      text-align: right;
+      color: rgba(115, 138, 148, .4)
+    }
+  }
+}
 </style>
 
 <style
