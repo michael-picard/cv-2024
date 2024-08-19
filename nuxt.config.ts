@@ -16,7 +16,14 @@ export default defineNuxtConfig({
     (_options, nuxt) => {
       nuxt.hooks.hook('vite:extendConfig', (config) => {
         // @ts-expect-error
-        config.plugins.push(vuetify({autoImport: true}))
+        config.plugins.push(
+          vuetify({
+            autoImport: true,
+            styles: {
+              configFile: 'scss/vuetify/settings.scss',
+            }
+          })
+        )
       })
     },
     'nuxt-particles',
@@ -25,7 +32,7 @@ export default defineNuxtConfig({
     '@nuxtjs/sitemap',
   ],
   content: {
-    documentDriven: true,
+    // documentDriven: true,
     highlight: {
       theme: 'github-dark',
     }
@@ -36,6 +43,7 @@ export default defineNuxtConfig({
         transformAssetUrls,
       },
     },
+
   },
   app: {
     head: {
@@ -48,7 +56,6 @@ export default defineNuxtConfig({
     prerender: {
       crawlLinks: true,
       routes: ["/sitemap.xml"],
-      // routes: ["/", "/blog"],
     },
   },
   sitemap: {

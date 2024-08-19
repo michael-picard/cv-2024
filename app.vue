@@ -1,9 +1,9 @@
 <template>
-  <NavHeaderBar/>
-  <main>
-    <NuxtPage/>
-  </main>
-  <FooterBar/>
+    <NavHeaderBar/>
+    <main>
+      <NuxtPage/>
+    </main>
+    <FooterBar/>
 </template>
 
 <script
@@ -65,28 +65,6 @@ h2 {
   font-variant-caps: small-caps;
   font-weight: 800;
 }
-
-// Shiki
-pre.shiki {
-  background-color: #2f312f; // rgb(15, 17, 26);
-  margin: 1rem 0;
-  padding: 1rem 0;
-
-  code {
-    counter-reset: step;
-    counter-increment: step 0;
-
-    .line::before {
-      content: counter(step);
-      counter-increment: step;
-      width: 1rem;
-      margin-right: 1.5rem;
-      display: inline-block;
-      text-align: right;
-      color: rgba(115, 138, 148, .4)
-    }
-  }
-}
 </style>
 
 <style
@@ -96,79 +74,6 @@ pre.shiki {
 main {
   margin: auto;
   max-width: 1000px;
-
-  :deep(section) {
-    margin: 2rem 0;
-
-    &:first-of-type {
-      --index: 1;
-    }
-
-    &:nth-child(2) {
-      --index: 2;
-    }
-
-    &:nth-child(3) {
-      --index: 3;
-    }
-
-    .card__content {
-      padding: 2rem;
-      background-color: white;
-      border-radius: 1rem;
-      box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
-    }
-  }
-
-  :deep(section:not(.card)) {
-    padding: 2rem;
-    background-color: white;
-    border-radius: 1rem;
-    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
-  }
-
-
-  @media screen and (min-height: 700px) { // The card scroll animation is only visible on screens with a height of at least 676px
-    :deep(.card) {
-      position: sticky;
-      top: 1rem;
-    }
-
-    :deep(.card__content) {
-      transform-origin: 50% 0%;
-      will-change: transform;
-    }
-
-    @supports (animation-timeline: view()) {
-      :deep(.card) {
-        --index0: calc(var(--index) - 1); /* 0-based index */
-        --reverse-index: calc(var(--numcards) - var(--index0)); /* reverse index */
-        --reverse-index0: calc(var(--reverse-index) - 1); /* 0-based reverse index */
-      }
-
-      @keyframes scale {
-        to {
-          transform: scale(calc(1.1 - calc(0.1 * var(--reverse-index))));
-        }
-      }
-
-      .cards {
-        --numcards: 2;
-        view-timeline-name: --cards-element-scrolls-in-body;
-      }
-
-      :deep(.card__content) {
-        --start-range: calc(var(--index0) / var(--numcards) * 100%);
-        --end-range: calc((var(--index)) / var(--numcards) * 100%);
-
-        animation: linear scale forwards;
-        animation-timeline: --cards-element-scrolls-in-body;
-        animation-range: exit-crossing var(--start-range) exit-crossing var(--end-range);
-      }
-    }
-  }
-
+  padding: 0 1rem;
 }
-
-
 </style>
