@@ -1,9 +1,10 @@
 <template>
-    <NavHeaderBar/>
-    <main>
-      <NuxtPage/>
-    </main>
-    <FooterBar/>
+  <NavHeaderBar/>
+  <main>
+    <NuxtPage/>
+  </main>
+  <FooterBar/>
+  <MainSidebar/>
 </template>
 
 <script

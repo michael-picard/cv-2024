@@ -6,8 +6,9 @@
         @load="onLoad"
     />
     <nav>
-      <router-link to="/">Home</router-link>
-      <router-link to="/blog">Blog</router-link>
+      <button @click.stop="toggleMainSidebar = !toggleMainSidebar">
+        <MenuIcon fill=" white"/>
+      </button>
     </nav>
   </header>
 </template>
@@ -18,6 +19,8 @@
 >
 import type {Container} from '@tsparticles/engine'
 import particleOptions from "~/utils/particles-options";
+import MenuIcon from "~/components/icons/MenuIcon.vue";
+import {toggleMainSidebar} from "~/stores";
 
 const onLoad = (container: Container) => {
   // Do something with the container
@@ -25,7 +28,6 @@ const onLoad = (container: Container) => {
   // container.pause()
   // setTimeout(() => container.play(), 2000)
 }
-
 </script>
 
 <style
@@ -42,19 +44,31 @@ header {
     height: 50px;
     width: 100vw;
     position: absolute;
-    //top: 0;
   }
 
   nav {
     z-index: 1;
-    background-color: #2f312f;
+    background-color: transparentize(#2f312f,.2);
     position: absolute;
+    height: 50px;
+    display: grid;
+    place-items: center;
+    padding: 0 1rem;
 
-    a {
-      margin: 0 1rem;
+    button {
+      display: flex;
+      padding: 4px;
+      background-color: transparent;
+      appearance: none;
+      border: none;
+      color: transparent;
+      cursor: pointer;
+
+      &:focus-visible {
+        outline: none;
+        border: none;
+      }
     }
   }
 }
-
-
 </style>
