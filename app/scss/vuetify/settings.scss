@@ -3,7 +3,7 @@
    Below are my custom values for Vuetify scss variables
  */
 
-@use 'vuetify/settings' with (
+@use '../../../node_modules/vuetify/settings' with (
   $breadcrumbs-padding-x: 0,
   $breadcrumbs-line-height: 1,
    $breadcrumbs-divider-padding: 0 .25rem,

@@ -88,6 +88,13 @@ const experiences = [
     scoped
     lang=scss
 >
+section {
+  overflow-x: scroll;
+  .v-timeline {
+    min-width: 600px;
+  }
+}
+
 .experience__title {
   display: flex;
   justify-content: space-between;

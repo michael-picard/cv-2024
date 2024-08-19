@@ -39,7 +39,6 @@ import {format} from "date-fns";
     lang="scss"
 >
 article {
-  margin: 2rem 0;
 
   em {
     opacity: var(--v-disabled-opacity);

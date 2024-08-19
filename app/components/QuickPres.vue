@@ -2,11 +2,6 @@
   <section class="card">
     <div class="quick-pres__grid card__content">
       <div>
-        <!--                <img-->
-        <!--                    src="/media/images/cropped/mp-portait-grayscale-but-green.jpg"-->
-        <!--                    alt="mp"-->
-        <!--                    width="200"-->
-        <!--                />-->
         <NuxtImg
             src="/media/images/cropped/mp-portait-grayscale-but-green-400-516.jpg"
             quality="50"
@@ -42,7 +37,6 @@
           </div>
         </div>
         <p>Hello, my friends and colleagues call me Mike. I am a French senior full stack developer with over 10 years of experience in the e-commerce industry. I obsess over web perfomance and thrive on constant learning. My skills and experience will help you solve problems and make more money.</p>
-        <p><router-link to="/blog">Read the blog</router-link></p>
       </div>
     </div>
   </section>
@@ -52,7 +46,6 @@
     setup
     lang="ts"
 >
-
 import LinkedinIcon from "~/components/icons/LinkedinIcon.vue";
 import PhoneIcon from "~/components/icons/PhoneIcon.vue";
 </script>

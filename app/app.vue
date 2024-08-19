@@ -72,7 +72,7 @@ h2 {
     lang="scss"
 >
 main {
-  margin: auto;
+  margin: 2rem auto;
   max-width: 1000px;
   padding: 0 1rem;
 }
