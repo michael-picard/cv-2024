@@ -13,6 +13,7 @@ const route = useRoute()
 
 const categories = {
   performance: 'Performance',
+  languages: 'Languages',
 }
 
 const articles = await queryContent().where({category: categories[route.params.slug]}).find()

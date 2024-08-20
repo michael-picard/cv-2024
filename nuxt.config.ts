@@ -35,6 +35,9 @@ export default defineNuxtConfig({
     // documentDriven: true,
     highlight: {
       theme: 'github-dark',
+      langs: [
+        'php',
+      ]
     }
   },
   vite: {
