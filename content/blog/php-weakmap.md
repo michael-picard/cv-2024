@@ -29,7 +29,7 @@ class CompTable
   {
     ob_start();
     ?>
-    <div class="comparatif-etrail">
+    <div class="comparatif">
       <table>
         <!-- some HTML -->
         <tr data-compare="price">
