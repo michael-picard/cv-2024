@@ -39,7 +39,10 @@ export default defineNuxtConfig({
         'php',
         'js',
       ]
-    }
+    },
+    markdown: {
+      anchorLinks: false,
+    },
   },
   vite: {
     vue: {
