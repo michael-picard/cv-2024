@@ -23,6 +23,12 @@ useHead({
 
 
 <style scoped lang="scss">
+:deep(h2) {
+  color: rgb(var(--v-theme-info));
+  font-variant-caps: small-caps;
+  font-weight: 800;
+}
+
 :deep(section) {
   margin: 2rem 0;
 
