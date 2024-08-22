@@ -17,8 +17,10 @@
         <template v-for="tag in article.tags">
           <v-chip color="secondary small">{{ tag }}</v-chip>
         </template>
+        <div>
+          <em>{{ format(new Date(article.date), 'MMM do, yyyy') }}</em>
+        </div>
       </footer>
-      <em>{{ format(new Date(article.date), 'MMM do, yyyy') }}</em>
     </article>
   </div>
 </template>
@@ -47,6 +49,9 @@ defineProps(['posts'])
     border-radius: .5rem;
     padding: 1rem;
     background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     h2 {
       font-size: 1.25rem;
@@ -60,7 +65,9 @@ defineProps(['posts'])
     }
 
     footer {
-      font-family: monospace;
+      :deep(.v-chip__content) {
+        font-family: monospace;
+      }
     }
 
     em {

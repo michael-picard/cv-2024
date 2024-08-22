@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <div class="footer__text">©{{ new Date().getFullYear() }} &bullet; <a href="https://github.com/michael-picard/cv-2024" rel="nofollow">source code</a></div>
+    <div class="footer__text">©{{ new Date().getFullYear() }} &bullet; this site is <a href="https://github.com/michael-picard/cv-2024" rel="nofollow">open source</a></div>
     <NuxtParticles
         id="particles-footer"
         :options="particleOptions"
@@ -35,7 +35,7 @@ footer {
   }
 
   .footer__text {
-    background-color: #2f312f;
+    background-color: transparentize(#2f312f,.2);
     padding: .25rem .5rem;
     z-index: 1;
   }
