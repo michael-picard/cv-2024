@@ -4,7 +4,7 @@ description: 'In this post we divide by 7 the time it takes to generate 4 new si
 category: 'Languages'
 date: '2024-08-21'
 tags: [ 'php' ]
-breadcrumbTitle: 'Process Control Functions'
+breadcrumbTitle: 'Multiprocessing'
 ---
 
 There are a lot of file uploads and displays involved in the automobile industry. As such, I wanted to try to resize and crop to different sizes the original image when the user uploads the file before I send the response back to the browser. I could enqueue an async task to handle that, but I was wondering if it was possible to do it synchronously as a proof of concept. I had read about PHP Fibers and gave it a failed attempt, that's when I discovered `pcntl_fork()` and the cool realm of Process Control Functions in PHP.
