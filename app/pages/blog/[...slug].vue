@@ -40,6 +40,10 @@ import {format} from "date-fns";
 >
 article {
 
+  :deep(h2, h3, h4) {
+    margin: 1rem auto;
+  }
+
   em {
     opacity: var(--v-disabled-opacity);
   }
@@ -55,6 +59,10 @@ article {
   :deep(code:not(pre code)) { // Avoid shiki pre > code
     background-color: rgba(var(--v-theme-primary), .2);
     padding: .125rem .5rem;
+  }
+
+  :deep(iframe) {
+    width: 100%;
   }
 
   // Shiki
