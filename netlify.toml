@@ -4,6 +4,3 @@ package = "@netlify/plugin-lighthouse"
 # to audit a path other than /
 [[plugins.inputs.audits]]
 path = "blog/languages/php/mutliprocessing-with-pcntl-fork"
-
-[[plugins.inputs.audits]]
-url = "https://michael-picard.dev/"

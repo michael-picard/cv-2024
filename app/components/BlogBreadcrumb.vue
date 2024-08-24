@@ -1,5 +1,16 @@
 <template>
-  <v-breadcrumbs :items="breadcrumbs" divider="&bullet;"/>
+  <div class="breadcrumbs">
+    <template v-for="breadcrumb in breadcrumbs">
+      <template v-if="!breadcrumb.disabled">
+        <NuxtLink
+            :to="breadcrumb.to"
+        >{{ breadcrumb.title }}
+        </NuxtLink>
+        <span class="breadcrumbs__separator">&bullet;</span>
+      </template>
+      <span v-if="breadcrumb.disabled" data-title>{{ breadcrumb.title }}</span>
+    </template>
+  </div>
 </template>
 
 <script
@@ -36,10 +47,19 @@ const breadcrumbs = computed(() => [
     scoped
     lang=scss
 >
-.v-breadcrumbs {
-  flex-wrap: wrap;
-  :deep(.v-breadcrumbs-item--link) {
-    color: rgb(var(--v-theme-info));
+.breadcrumbs {
+  margin: .5rem 0;
+  display: flex;
+  gap: .5rem;
+
+  a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  [data-title] {
+    opacity: var(--v-disabled-opacity);
   }
 }
 </style>
