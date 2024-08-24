@@ -3,8 +3,18 @@
     <template v-slot="{ doc }">
       <article>
         <BlogBreadcrumb :doc="doc"/>
-        <h1>{{ doc.title }}</h1>
-        <em>{{ format(new Date(doc.date), 'MMM do, yyyy') }}</em>
+        <header>
+          <h1>{{ doc.title }}</h1>
+          <div>
+            <NuxtImg
+                src="/media/images/mp-outside-headshot-@64.jpg"
+                alt="mike"
+                width="32"
+                height="32"
+            />
+            <em>{{ format(new Date(doc.date), 'MMM do, yyyy') }}</em>
+          </div>
+        </header>
         <v-divider/>
         <ContentRenderer :value="doc"/>
         <v-divider/>
@@ -40,12 +50,29 @@ import {format} from "date-fns";
 >
 article {
 
-  :deep(h2, h3, h4) {
-    margin: 1rem auto;
+  header {
+    div {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      //margin-left: 1rem;
+
+      img {
+        border-radius: 50%;
+        filter: sepia(.5);
+        display: inline;
+      }
+    }
+
   }
+
 
   em {
     opacity: var(--v-disabled-opacity);
+  }
+
+  :deep(h2, h3, h4) {
+    margin: 1rem auto;
   }
 
   :deep(hr) {
