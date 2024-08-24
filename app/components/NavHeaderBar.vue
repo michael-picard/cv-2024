@@ -6,7 +6,9 @@
         @load="onLoad"
     />
     <nav>
-      <button @click.stop="toggleMainSidebar = !toggleMainSidebar">
+      <button
+          aria-label="Open Navigation menu"
+          @click.stop="toggleMainSidebar = !toggleMainSidebar">
         <MenuIcon fill=" white"/>
       </button>
     </nav>
