@@ -1,0 +1,6 @@
+[[plugins]]
+package = "@netlify/plugin-lighthouse"
+
+# to audit a path other than /
+[[plugins.inputs.audits]]
+path = "/blog/languages/php/mutliprocessing-with-pcntl-fork"
