@@ -19,6 +19,8 @@
 >
 const props = defineProps(['doc'])
 
+const config = useRuntimeConfig()
+
 const breadcrumbs = computed(() => [
   {
     title: 'Home',
@@ -41,6 +43,24 @@ const breadcrumbs = computed(() => [
     to: '',
   },
 ])
+
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: breadcrumbs.value.map((breadcrumb, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: breadcrumb.title,
+          item: `${config.public.appUrl}${breadcrumb.to}` || null,
+        })).filter(breadcrumb => breadcrumb.item),
+      }),
+    },
+  ],
+})
 </script>
 
 <style
