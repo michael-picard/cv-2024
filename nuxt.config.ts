@@ -2,12 +2,18 @@ import vuetify, {transformAssetUrls} from 'vite-plugin-vuetify'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  runtimeConfig: {
+    public: {
+      appUrl: 'https://michael-picard.dev',
+    },
+  },
   future: {
     compatibilityVersion: 4,
   },
   devtools: {enabled: true},
   site: {
     url: 'https://michael-picard.dev',
+    name: 'Michael Picard',
   },
   build: {
     transpile: ['vuetify'],
@@ -30,6 +36,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/content',
     '@nuxtjs/sitemap',
+    'nuxt-schema-org',
   ],
   content: {
     // documentDriven: true,
@@ -68,5 +75,11 @@ export default defineNuxtConfig({
   sitemap: {
     strictNuxtContentPaths: true
   },
-  compatibilityDate: '2024-08-16'
+  compatibilityDate: '2024-08-16',
+  // schemaOrg: {
+  //   identity: {
+  //     type: 'Person',
+  //     name: 'Michael Picard',
+  //   }
+  // }
 })
