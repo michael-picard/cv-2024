@@ -3,12 +3,15 @@
     <template v-for="breadcrumb in breadcrumbs">
       <template v-if="!breadcrumb.disabled">
         <NuxtLink
-            :to="breadcrumb.to"
-        >{{ breadcrumb.title }}
+            :to="breadcrumb.item"
+        >{{ breadcrumb.name }}
         </NuxtLink>
         <span class="breadcrumbs__separator">&bullet;</span>
       </template>
-      <span v-if="breadcrumb.disabled" data-title>{{ breadcrumb.title }}</span>
+      <span
+          v-if="breadcrumb.disabled"
+          data-title
+      >{{ breadcrumb.name }}</span>
     </template>
   </div>
 </template>
@@ -19,48 +22,34 @@
 >
 const props = defineProps(['doc'])
 
-const config = useRuntimeConfig()
-
 const breadcrumbs = computed(() => [
   {
-    title: 'Home',
+    name: 'Home',
     disabled: false,
-    to: '/',
+    item: '/',
   },
   {
-    title: 'Blog',
+    name: 'Blog',
     disabled: false,
-    to: '/blog',
+    item: '/blog',
   },
   {
-    title: props.doc.category,
+    name: props.doc.category,
     disabled: false,
-    to: `/blog/category/${props.doc.category.toLowerCase()}`,
+    item: `/blog/category/${props.doc.category.toLowerCase()}`,
   },
   {
-    title: props.doc.breadcrumbTitle,
+    name: props.doc.breadcrumbTitle,
     disabled: true,
-    to: '',
+    item: '',
   },
 ])
 
-useHead({
-  script: [
-    {
-      type: 'application/ld+json',
-      innerHTML: JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'BreadcrumbList',
-        itemListElement: breadcrumbs.value.map((breadcrumb, index) => ({
-          '@type': 'ListItem',
-          position: index + 1,
-          name: breadcrumb.title,
-          item: `${config.public.appUrl}${breadcrumb.to}` || null,
-        })).filter(breadcrumb => breadcrumb.item),
-      }),
-    },
-  ],
-})
+useSchemaOrg([
+  defineBreadcrumb({
+    itemListElement: breadcrumbs
+  }),
+])
 </script>
 
 <style
@@ -74,10 +63,12 @@ useHead({
 
   a {
     text-decoration: none;
+
     &:hover {
       text-decoration: underline;
     }
   }
+
   [data-title] {
     opacity: var(--v-disabled-opacity);
   }

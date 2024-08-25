@@ -76,10 +76,10 @@ export default defineNuxtConfig({
     strictNuxtContentPaths: true
   },
   compatibilityDate: '2024-08-16',
-  // schemaOrg: {
-  //   identity: {
-  //     type: 'Person',
-  //     name: 'Michael Picard',
-  //   }
-  // }
+  schemaOrg: {
+    identity: {
+      type: 'Person',
+      name: 'Michael Picard',
+    }
+  }
 })

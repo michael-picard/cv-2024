@@ -30,6 +30,7 @@
           </template>
         </div>
       </article>
+      <SchemaOrgArticle />
     </template>
   </ContentDoc>
 </template>
