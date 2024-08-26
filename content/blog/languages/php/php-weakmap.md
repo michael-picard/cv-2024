@@ -5,6 +5,7 @@ category: 'Languages'
 date: '2024-08-19'
 tags: ['php']
 breadcrumbTitle: 'PHP WeakMap'
+image: 'media/blog/post-thumbnails/php-weakmap.png'
 ---
 
 I was recently faced with an interesting PHP need that I wanted to solve in the most graceful manner. The marketing team asked me to write a comparison table, so I had to basically loop through four product objects and build an HTML table that would make it easy for visitors to compare the product attributes.

@@ -5,6 +5,7 @@ category: 'Languages'
 date: '2024-05-18'
 tags: ['php']
 breadcrumbTitle: 'debug_backtrace()'
+image: 'media/blog/post-thumbnails/debug-backtrace.png'
 ---
 
 I did find myself a few times when asked to do heavy customization work inside a framework, to be aware of the call stack preceding the execution of a piece of code.
