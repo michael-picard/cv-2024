@@ -16,7 +16,11 @@
     setup
     lang="ts"
 >
-
+if (import.meta.browser) {
+  if (navigator.serviceWorker) {
+    navigator.serviceWorker.register('/sw/sw.js');
+  }
+}
 </script>
 
 <style lang="scss">
