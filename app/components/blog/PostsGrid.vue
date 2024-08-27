@@ -16,7 +16,6 @@
             :alt="article.title"
         />
       </router-link>
-      <div class="article__inner">
       <h2>
         <router-link :to="article._path">{{ article.title }}</router-link>
       </h2>
@@ -34,7 +33,6 @@
           <em>{{ format(new Date(article.date), 'MMM do, yyyy') }}</em>
         </div>
       </footer>
-      </div>
     </article>
   </div>
 </template>
@@ -63,7 +61,8 @@ defineProps(['posts'])
     border-radius: .5rem;
     background-color: white;
     display: grid;
-    grid-template-rows: auto 1fr;
+    grid-template-rows: subgrid;
+    grid-row: span 4;
 
     img {
       width: 100%;
@@ -73,25 +72,22 @@ defineProps(['posts'])
       aspect-ratio: 30 / 15;
     }
 
-    .article__inner {
-      padding: 1rem;
-      display: grid;
-      grid-template-rows: subgrid;
-      align-content: space-between;
-      grid-row: span 3;
-
       h2 {
         font-size: 1.25rem;
         margin-bottom: 1rem;
         line-height: 1.5rem;
         word-wrap: normal;
+        padding: 0 1rem;
       }
 
       p {
         margin-bottom: 1rem;
+        padding: 0 1rem;
       }
 
       footer {
+        padding: 0 1rem 1rem;
+
         :deep(.v-chip__content) {
           font-family: monospace;
         }
@@ -100,9 +96,6 @@ defineProps(['posts'])
       em {
         opacity: var(--v-disabled-opacity);
       }
-    }
-
-
   }
 }
 </style>
