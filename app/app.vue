@@ -3,7 +3,7 @@
       :height="2"
       color="repeating-linear-gradient(to right,rgb(122,211,207) 0%, rgb(115,168,223) 100%)"
   />
-<!--  <HydrationStatus />-->
+  <!--  <HydrationStatus />-->
   <NavHeaderBar/>
   <main>
     <NuxtPage/>
@@ -18,7 +18,13 @@
 >
 if (import.meta.browser) {
   if (navigator.serviceWorker) {
-    navigator.serviceWorker.register('/sw/sw.js');
+    navigator.serviceWorker.register('/sw.js',)
+        .then(registration => {
+          console.log('Service Worker registered with scope:', registration.scope);
+        })
+        .catch(error => {
+          console.error('Service Worker registration failed:', error);
+        })
   }
 }
 </script>
