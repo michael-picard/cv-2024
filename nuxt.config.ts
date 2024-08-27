@@ -45,6 +45,7 @@ export default defineNuxtConfig({
       langs: [
         'php',
         'js',
+        'css',
       ]
     },
     markdown: {
