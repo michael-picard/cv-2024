@@ -3,6 +3,7 @@
       :height="2"
       color="repeating-linear-gradient(to right,rgb(122,211,207) 0%, rgb(115,168,223) 100%)"
   />
+<!--  <HydrationStatus />-->
   <NavHeaderBar/>
   <main>
     <NuxtPage/>

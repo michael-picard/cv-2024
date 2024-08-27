@@ -37,6 +37,7 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@nuxtjs/sitemap',
     'nuxt-schema-org',
+    'nuxt-delay-hydration',
   ],
   content: {
     // documentDriven: true,
@@ -82,5 +83,11 @@ export default defineNuxtConfig({
       type: 'Person',
       name: 'Michael Picard',
     }
+  },
+  delayHydration: {
+    // enables nuxt-delay-hydration in dev mode for testing
+    // NOTE: you should disable this once you've finished testing, it will break HMR
+    // debug: process.env.NODE_ENV === 'development',
+    mode: 'init',
   }
 })
