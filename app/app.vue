@@ -25,6 +25,11 @@ if (import.meta.browser) {
         .catch(error => {
           console.error('Service Worker registration failed:', error);
         })
+    navigator.serviceWorker.addEventListener('message', event => {
+      if (event.data === 'offline') {
+        alert(`It seems you are offline. Please check your internet connection.`);
+      }
+    })
   }
 }
 </script>
