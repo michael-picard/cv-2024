@@ -9,6 +9,9 @@
           <li>
             <router-link to="/blog">Blog</router-link>
           </li>
+          <li>
+            <router-link to="/resume">Resume</router-link>
+          </li>
         </ul>
       </nav>
     </aside>

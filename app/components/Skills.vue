@@ -1,5 +1,5 @@
 <template>
-  <section class="card">
+  <section>
     <div class="card__content">
       <h2>Skills</h2>
       <div class="skills__grid">

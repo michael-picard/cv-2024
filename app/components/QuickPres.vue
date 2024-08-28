@@ -1,5 +1,5 @@
 <template>
-  <section class="card">
+  <section>
     <div class="quick-pres__grid card__content">
       <div>
         <NuxtImg
@@ -36,7 +36,8 @@
             </a>
           </div>
         </div>
-        <p>Hello, my friends and colleagues call me Mike. I am a French senior full stack developer with over 10 years of experience in the e-commerce industry. I obsess over web perfomance and thrive on constant learning. My skills and experience will help you solve problems and make more money.</p>
+        <p>Hello, my friends and colleagues call me Mike. I am a French senior full stack developer with over 10 years of experience in the e-commerce industry. I obsess over web performance and thrive on constant learning.</p>
+        <p>Feel free to peek into my <nuxt-link to="/blog">nerd blog</nuxt-link> or check out my <router-link to="/resume">resume</router-link>.</p>
       </div>
     </div>
   </section>
