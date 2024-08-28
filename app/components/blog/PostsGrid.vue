@@ -75,8 +75,8 @@ defineProps(['posts'])
         font-size: 1.25rem;
         margin-bottom: 1rem;
         line-height: 1.5rem;
-        word-wrap: normal;
         padding: 0 1rem;
+        overflow-wrap: anywhere;
       }
 
       p {
