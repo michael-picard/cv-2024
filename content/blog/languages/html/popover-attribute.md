@@ -6,6 +6,7 @@ date: '2024-04-02'
 tags: ['html']
 breadcrumbTitle: 'Popover attribute'
 image: 'media/blog/post-thumbnails/popover-attribute.png'
+baseline: 'popover'
 ---
 
 This new attribute is available cross-platform now, and is handy for a few UI web elements like modals, pop-ups, tool tips, etc...

@@ -5,14 +5,17 @@
         <BlogBreadcrumb :doc="doc"/>
         <header>
           <h1>{{ doc.title }}</h1>
-          <div>
-            <NuxtImg
-                src="/media/images/mp-outside-headshot-@64.jpg"
-                alt="mike"
-                width="32"
-                height="32"
-            />
-            <em>{{ format(new Date(doc.date), 'MMM do, yyyy') }}</em>
+          <div class="article__details">
+            <div class="article__author">
+              <NuxtImg
+                  src="/media/images/mp-outside-headshot-@64.jpg"
+                  alt="mike"
+                  width="32"
+                  height="32"
+              />
+              <em>{{ format(new Date(doc.date), 'MMM do, yyyy') }}</em>
+            </div>
+            <BaselineStatus v-if="doc.baseline" :doc="doc"/>
           </div>
         </header>
         <v-divider/>
@@ -30,7 +33,7 @@
           </template>
         </div>
       </article>
-      <SchemaOrgArticle />
+      <SchemaOrgArticle/>
     </template>
   </ContentDoc>
 </template>
@@ -40,6 +43,7 @@
     lang="ts"
 >
 import {format} from "date-fns";
+import BaselineStatus from "~/components/blog/BaselineStatus.vue";
 </script>
 
 
@@ -49,12 +53,22 @@ import {format} from "date-fns";
 >
 article {
 
+  h1 {
+    margin-bottom: .5rem;
+  }
+
   header {
-    div {
+    .article__details {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      align-items: center;
+      grid-gap: 1rem;
+    }
+
+    .article__author {
       display: flex;
       align-items: center;
       gap: .5rem;
-      //margin-left: 1rem;
 
       img {
         border-radius: 50%;

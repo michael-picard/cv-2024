@@ -6,6 +6,7 @@ date: '2024-08-26'
 tags: [ 'CSS' ]
 breadcrumbTitle: 'subgrid'
 image: 'media/blog/post-thumbnails/css-subgrid.png'
+baseline: 'subgrid'
 ---
 
 For the last 15 years, a recurrent struggle I had with taxonomy pages, whether it be an ecommerce site or not, is

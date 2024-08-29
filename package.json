@@ -24,6 +24,7 @@
     "vuetify": "^3.6.9"
   },
   "dependencies": {
-    "date-fns": "^3.6.0"
+    "date-fns": "^3.6.0",
+    "web-features": "^1.2.0"
   }
 }
