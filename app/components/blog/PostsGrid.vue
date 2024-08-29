@@ -77,6 +77,7 @@ defineProps(['posts'])
         line-height: 1.5rem;
         padding: 0 1rem;
         overflow-wrap: anywhere;
+        text-wrap: balance;
       }
 
       p {
