@@ -1,16 +1,6 @@
 <template>
-<!--  <div class="cards">-->
     <QuickPres/>
     <LatestFromTheBlog/>
-<!--  </div>-->
-<!--  <div class="display-resume">-->
-<!--    <v-btn-->
-<!--        color="secondary"-->
-<!--        @click="toggleDisplay"-->
-<!--    >-->
-<!--      DISPLAY MY RESUME-->
-<!--    </v-btn>-->
-<!--  </div>-->
 </template>
 
 <script
@@ -18,12 +8,6 @@
     lang="ts"
 >
 import LatestFromTheBlog from "~/components/home/LatestFromTheBlog.vue";
-
-const displayResume = ref(false)
-
-function toggleDisplay() {
-  displayResume.value = !displayResume.value
-}
 
 useHead({
   title: 'Michael Picard - Full Stack Developer',
@@ -53,5 +37,4 @@ section:not(.card) {
   border-radius: 1rem;
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
 }
-
 </style>
