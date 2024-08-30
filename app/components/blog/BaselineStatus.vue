@@ -1,6 +1,8 @@
 <template>
-<div v-if="doc.baseline">
-  <BaselineNewlyAvailable /> <strong>Baseline</strong> {{ baselineDate }} : {{status}}
+<div v-if="doc.baseline" :class="baseLineValue">
+  <BaselineNewlyAvailable v-if="baseLineValue === 'low'" />
+  <BaselineWidelyAvailable v-else-if="baseLineValue === 'high'" />
+  <strong>Baseline</strong> {{ baselineDate }} : {{status}}
 </div>
 </template>
 
@@ -10,6 +12,7 @@
 >
 import data from "web-features/data.json" with { type: "json" };
 import BaselineNewlyAvailable from "~/components/icons/BaselineNewlyAvailable.vue";
+import BaselineWidelyAvailable from "~/components/icons/BaselineWidelyAvailable.vue";
 
 const props = defineProps(['doc'])
 const {  features } = data;
@@ -17,7 +20,7 @@ const {  features } = data;
 const baselineDate = computed(() => {
   return new Date(features[props.doc.baseline].status.baseline_low_date).getFullYear()
 });
-
+const baseLineValue = computed(() => features[props.doc.baseline].status.baseline)
 const status = computed(() => {
   const baseline = features[props.doc.baseline].status.baseline
   if (baseline === 'low') {
@@ -41,5 +44,12 @@ if (import.meta.browser) {
 div {
   background-color: rgba(var(--v-theme-primary), var(--v-activated-opacity));
   padding: .5rem 1rem;
+  svg {
+    margin-right: .5rem;
+  }
+
+  &.high {
+    background-color: rgba(var(--v-theme-success), var(--v-activated-opacity));
+  }
 }
 </style>

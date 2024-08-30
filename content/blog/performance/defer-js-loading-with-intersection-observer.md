@@ -6,6 +6,7 @@ date: '2024-08-13'
 tags: ['js']
 breadcrumbTitle: 'IntersectionObserver & defer loading'
 image: 'media/blog/post-thumbnails/intersection-observer.png'
+baseline: 'intersection-observer'
 ---
 One technique I often use to improve page load time and decrease **first CPU idle** is entirely deferring the load of js file(s).
 
