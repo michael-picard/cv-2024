@@ -151,8 +151,11 @@ onMounted(() => {
 >
 .skills__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
   gap: 2rem;
+
+  @media screen and (min-width: 500px) {
+    grid-template-columns: repeat(auto-fit, minmax(290px,1fr));
+  }
 
   h3 {
     margin: 1rem 0 .5rem;

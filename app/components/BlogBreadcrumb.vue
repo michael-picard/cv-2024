@@ -60,6 +60,8 @@ useSchemaOrg([
   margin: .5rem 0;
   display: flex;
   gap: .5rem;
+  flex-wrap: wrap;
+  line-height: 1;
 
   a {
     text-decoration: none;
