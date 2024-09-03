@@ -38,6 +38,10 @@ footer {
     background-color: transparentize(#2f312f,.2);
     padding: .25rem .5rem;
     z-index: 1;
+
+    a {
+      color: oklch(0.72 0.16 222.77);;
+    }
   }
 }
 </style>

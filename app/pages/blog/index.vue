@@ -8,7 +8,7 @@
 >
 import PostsGrid from "~/components/blog/PostsGrid.vue";
 
-const list = await queryContent().sort({date: -1}).find()
+const list = await queryContent().where({draft:{$not:true}}).sort({date: -1}).find()
 
 useHead({
   title: 'Blog Archive - Mike Full Stack Dev',

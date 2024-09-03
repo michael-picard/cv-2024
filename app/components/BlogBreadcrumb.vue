@@ -36,7 +36,7 @@ const breadcrumbs = computed(() => [
   {
     name: props.doc.category,
     disabled: false,
-    item: `/blog/category/${props.doc.category.toLowerCase()}`,
+    item: `/blog/category/${props.doc.category.toLowerCase().replace(' ','-')}`,
   },
   {
     name: props.doc.breadcrumbTitle,

@@ -86,4 +86,10 @@ main {
 a {
   color: rgb(var(--v-theme-info))
 }
+
+@media (color-gamut: p3) {
+  a {
+    color: oklch(0.54 0.14 226.44);
+  }
+}
 </style>

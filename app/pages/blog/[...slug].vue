@@ -96,6 +96,10 @@ article {
     margin-bottom: 1rem;
   }
 
+  :deep(ul) {
+    margin-bottom: 1rem;
+  }
+
   :deep(code:not(pre code)) { // Avoid shiki pre > code
     background-color: rgba(var(--v-theme-primary), .2);
     padding: .125rem .5rem;
